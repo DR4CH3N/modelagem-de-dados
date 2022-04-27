@@ -50,3 +50,11 @@ DROP DATABASE nome_database
 ```sql
 USE DATABASE nome_database
 ```
+### adicionar coluna/campo em uma tabela
+
+```sql
+ALTER TABLE nome_tabela ADD nome_coluna AFTER nome_tabela 
+
+# AFTER nome_tabela vai dizer a ordem que a tabela vai ser adicionada (no caso depois da tabela)
+```
+

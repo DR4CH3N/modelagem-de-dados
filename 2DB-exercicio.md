@@ -22,6 +22,7 @@ CREATE TABLE generos (
 ALTER TABLE filmes
     # CONSTRAINT é uma restrição definida no relacionamento;
     ADD CONSTRAINT fk_generos_filmes
+    # filmes em ultima ordem vai ser onde o constraint vai ser criado
 
     # a chave estrangeira deve fazer referencia a chave primaria
     FOREIGN KEY(genero_id) REFERENCES generos(id);
