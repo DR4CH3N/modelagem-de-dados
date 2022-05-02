@@ -67,6 +67,25 @@ INSERT INTO produtos(nome, descricao, preco, quantidade, fabricante_id) VALUES
     4500.68,
     3,
     7
-);
+); 
 ```
 
+## SELECT
+
+### Ler dados da tabela produtos
+```sql
+SELECT * FROM produtos;
+SELECT nome, preco FROM produtos;
+SELECT nome FROM produtos WHERE preco < 5000;
+SELECT nome, descricao FROM produtos WHERE fabricante_id = 3; # Apple
+```
+
+### operadores logicos: E, OU, NÃO
+```sql
+SELECT * FROM produtos
+WHERE preco >= 5000 AND preco < 8000;
+
+SELECT nome, preco FROM produtos
+-- dos fabricantes apple ou microsoft
+WHERE fabricante_id = 3 OR fabricante_id = 8;
+```
