@@ -94,4 +94,6 @@ SELECT nome, preco, quantidade FROM produtos WHERE NOT fabricante_id = 3;
 
 SELECT nome, preco, quantidade FROM produtos
 WHERE fabricante_id != 3; -- versão 2 usando operador !=
+
+WHERE fabricante_id in (3,8); -- usando função IN (lista)
 ```
