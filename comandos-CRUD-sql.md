@@ -112,5 +112,16 @@ WHERE descricao LIKE '%processador%'; -- LIKE (COMO)
 
 ```sql
 SELECT SUM(preco) FROM produtos; -- SOMA
-SELECT SUM(preco) AS TOTAL FROM produtos -- ALIAS (APELIDO)
+SELECT SUM(preco) AS TOTAL FROM produtos; -- ALIAS (APELIDO)
+
+SELECT SUM(quantidade) AS "quantidade em estoque"
+FROM PRODUTOS WHERE fabricante_id = 3; -- apple;
+
+-- AVG (media) MEDIA
+SELECT AVG(preco) AS "Média dos preços" --  apelido
+FROM produtos;
+
+-- ROUND (arredondar/arredondamento)
+SELECT ROUND(AVG(preco), 2) AS "média dos preços"
+FROM produtos;
 ```
