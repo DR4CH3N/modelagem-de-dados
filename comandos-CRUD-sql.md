@@ -97,3 +97,20 @@ WHERE fabricante_id != 3; -- versão 2 usando operador !=
 
 WHERE fabricante_id in (3,8); -- usando função IN (lista)
 ```
+
+### filtros
+```sql
+SELECT nome, preco, FROM produtos ORDER BY nome; -- ORDEM ASCENDENTE/crescente (padrão)
+SELECT nome, preco FROM produtos ORDER BY nome DESC -- ORDEM DECRESCENTE 
+SELECT nome, descricao FROM produtos
+WHERE descricao LIKE '%processador%'; -- LIKE (COMO)
+
+-- OPERADOR CORINGA (significa qualquer texto)
+```
+
+### OPERAÇÕES E FUNÇÕES DE AGREGAÇÃO
+
+```sql
+SELECT SUM(preco) FROM produtos; -- SOMA
+SELECT SUM(preco) AS TOTAL FROM produtos -- ALIAS (APELIDO)
+```
