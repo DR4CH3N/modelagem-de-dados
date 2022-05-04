@@ -171,4 +171,7 @@ WHERE fabricante_id = 1 OR fabricante_id = 3;
 
 ```sql
 DELETE FROM fabricantes WHERE id = 4; -- LG
+
+DELETE FROM produtos
+WHERE preco <= 2000 AND preco > 500;
 ```
