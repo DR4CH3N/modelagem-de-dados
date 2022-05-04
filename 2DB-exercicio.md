@@ -26,4 +26,7 @@ ALTER TABLE filmes
 
     # a chave estrangeira deve fazer referencia a chave primaria
     FOREIGN KEY(genero_id) REFERENCES generos(id);
+
+INSERT INTO generos (generos)
+VALUES ('Terror'), ('Ação'), ('Suspense'), ('Drama')
 ```

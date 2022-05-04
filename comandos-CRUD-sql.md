@@ -13,7 +13,7 @@
 INSERT INTO fabricantes (nome) VALUES('Asus');
 INSERT INTO fabricantes (nome) VALUES('Dell');
 INSERT INTO fabricantes (nome)
-VALUES ('APPLE',) ('LG'), ('samsung'), ('brastemp')
+VALUES ('APPLE'), ('LG'), ('samsung'), ('brastemp')
 ```
 
 ## produtos
