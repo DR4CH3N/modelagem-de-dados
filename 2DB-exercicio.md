@@ -29,4 +29,6 @@ ALTER TABLE filmes
 
 INSERT INTO generos (generos)
 VALUES ('Terror'), ('Ação'), ('Suspense'), ('Drama')
+
+
 ```
