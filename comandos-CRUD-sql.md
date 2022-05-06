@@ -213,5 +213,14 @@ FROM produtos INNER JOIN fabricantes
 ON produtos.fabricante_id = fabricantes.id
 GROUP BY fabricante
 
+-- com o right join, ele mostra mesmo os fabricantes SEM produtos. 
+-- diferente do inner join que caso um fabricante não tiver nenhum produto, o fabricante não será exibido.
+
+SELECT fabricantes.nome AS fabricante,
+COUNT(produtos.fabricante_id) AS "qtd de produtos"
+FROM produtos RIGHT JOIN fabricantes
+ON produtos.fabricante_id = fabricantes.id
+GROUP BY fabricante
+
 
 ```
