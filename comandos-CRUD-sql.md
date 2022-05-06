@@ -175,3 +175,43 @@ DELETE FROM fabricantes WHERE id = 4; -- LG
 DELETE FROM produtos
 WHERE preco <= 2000 AND preco > 500;
 ```
+
+### constultas em duas ou mais tabelas (junção)
+```sql
+-- SELECT nomeDaTabela.nomeDaColuna
+SELECT produtos.nome, fabricantes.nome
+
+-- INNER JOIN é o comando que permite JUNTAR tabelas
+FROM produtos INNER JOIN fabricantes
+
+-- ON comando para indicar o criteirio de junção
+ON produtos.fabricante_id = fabricantes.id;
+
+SELECT 
+produtos.nome AS "Produto" 
+fabricantes.nome AS "" Fabricante
+
+FROM produtos INNER JOIN fabricantes
+ON produtos.fabricante_id = fabricantes.id
+ORDER BY produtos.nome;
+
+-- fabricatnte, soma dos preços e quantidade de produtos
+
+SELECT fabricantes.nome AS fabricante,
+SUM(produtos.preco) AS Total, 
+COUNT(produtos.fabricante_id) AS "qtd de produtos"
+FROM produtos INNER JOIN fabricantes
+ON produtos.fabricante_id = fabricantes.id
+GROUP BY fabricante
+ORDER BY Total;
+
+-- Trazer a quantidade de produtos de cada fabricante
+
+SELECT fabricantes.nome AS fabricante,
+COUNT(produtos.fabricante_id) AS "qtd de produtos"
+FROM produtos INNER JOIN fabricantes
+ON produtos.fabricante_id = fabricantes.id
+GROUP BY fabricante
+
+
+```
