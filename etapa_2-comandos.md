@@ -16,7 +16,7 @@ INSERT INTO cursos(Titulo, CargaH) VALUES(
 INSERT INTO professores(nome, atuacao, professor_id) VALUES(
     'jon oliva',
     'infra'
-    
+    5
     
 );
 ```
