@@ -52,7 +52,7 @@ INSERT INTO professores(nome, atuacao, curso_id) VALUES(
 ## id 1 = front-end, id 2 = back-end, id 3 = UX/UI Design, id 4 = Figma, id 5 = Redes de computadores
 INSERT INTO alunos(Nome, Nascimento, Nota1, Nota2, curso_id) VALUES(
     'joão ninguem',
-    '20/06/1997',
+    '1997-06-20',
     8,
     7,
     2
