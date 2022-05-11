@@ -195,7 +195,7 @@ FROM produtos INNER JOIN fabricantes
 ON produtos.fabricante_id = fabricantes.id
 ORDER BY produtos.nome;
 
--- fabricatnte, soma dos preços e quantidade de produtos
+-- fabricante, soma dos preços e quantidade de produtos
 
 SELECT fabricantes.nome AS fabricante,
 SUM(produtos.preco) AS Total, 

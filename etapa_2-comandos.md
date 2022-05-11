@@ -122,5 +122,12 @@ INSERT INTO alunos(Nome, Nascimento, Nota1, Nota2, curso_id) VALUES(
     2,
     10,
     5
+),
+(
+  'Joãozinho',
+    '2010-05-06',
+    10,
+    7,
+    1
 );
 ```
