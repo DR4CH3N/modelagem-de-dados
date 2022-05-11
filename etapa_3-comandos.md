@@ -12,9 +12,10 @@ WHERE Nascimento < '2009-01-01';
 SELECT Nome, Nota1, Nota2, ROUND((Nota1 + Nota2)/2, 2) AS "media das notas"
 FROM alunos
 ```
-## 3) consulta calcula limite faltas cargaH ○
+## 3) consulta calcula limite faltas cargaH •
 ```sql
-
+SELECT Titulo, CargaH, (CargaH * 0.25) AS "Limite de faltas (por hora)"
+FROM cursos ORDER BY Titulo
 ```
 
 ## 4) consulta nome professores desenvolvimento •
@@ -23,27 +24,30 @@ SELECT nome, atuacao FROM professores
 -- dos fabricantes apple ou microsoft
 WHERE curso_id = 1 OR curso_id = 2;
 ```
-## 5) consulta QTD professores da area desenvolvimento ○
+## 5) consulta QTD professores da area desenvolvimento •
 ```sql
-SELECT COUNT(curso_id) AS "quantidade de professores na area de dev"
-FROM professores WHERE curso_id = 1 OR curso_id = 2;
+SELECT atuacao, COUNT(atuacao) 
+FROM professores GROUP BY atuacao
 
-SELECT COUNT(curso_id) AS "quantidade de professores por area de atuacao"
-FROM professores WHERE atuacao in (1, 2, 3, 4, 5)
-```
-
-## 6) consulta alunos nome, titulo e cargaH ○
-```sql
-    SELECT Nome, Titulo, CargaH FROM alunos, cursos
-
-    SELECT COUNT(DISTINCT) Nome, Titulo, CargaH FROM alunos, cursos
-```
-## 7) ○
-```sql
 
 ```
 
-## 8) ○
+## 6) consulta alunos nome, titulo e cargaH •
+```sql
+   SELECT alunos.Nome, cursos.Titulo, cursos.CargaH 
+   FROM alunos INNER JOIN cursos
+   ON alunos.curso_id = cursos.id ORDER BY alunos.nome;
+
+```
+## 7) consulta mostra nome professores, titulo curso, classificar pelo nome do professor •
+```sql
+    SELECT professores.Nome, cursos.Titulo, cursos.CargaH 
+    FROM professores INNER JOIN cursos 
+    ON professores.curso_id = cursos.id 
+    ORDER BY professores.nome
+```
+
+## 8) consulta mostra nome alunos, titulo curso e professor de cada curso ○
 ```sql
 
 ```
@@ -76,7 +80,22 @@ WHERE id = 4;
     DELETE FROM alunos WHERE curso_id = 3 AND id = 8;
 ```
 
-## 13) ○
+## 13) consulta mostra lista alunos, titulo curso classificados por nome de aluno ○
 ```sql
+    SELECT Nome, Titulo FROM alunos OR cursos
+    GROUP BY Nome
 
+    SELECT alunos.Nome AS aluno,
+    COUNT(alunos.curso_id) AS "qtd de alunos"
+    FROM alunos INNER JOIN cursos
+    ON alunos.curso_id = cursos.id
+    GROUP BY aluno
+    ORDER BY alunos.Nome
+
+     SELECT alunos.Nome AS aluno,
+    COUNT(alunos.id_id) AS "qtd de alunos no curso"
+    FROM alunos RIGHT JOIN cursos
+    ON alunos.curso_id = cursos.id
+    GROUP BY aluno
+    ORDER BY alunos.nome
 ```
