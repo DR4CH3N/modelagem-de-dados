@@ -114,7 +114,7 @@ WHERE id = 4;
 
 ## 1)
 ```sql
-SELECT nome, ROUND(DATEDIFF(CURDATE(), data_nascimento)/365) AS "Idade" FROM alunos;
+SELECT nome, ROUND(DATEDIFF(CURDATE(), nascimento)/365) AS "Idade" FROM alunos;
 ```
 
 ## 2)
@@ -130,5 +130,5 @@ SELECT nome, ROUND(AVG(nota1 + nota2)/2, 2) AS "Média" FROM alunos GROUP BY nom
 
 ## 4)
 ```sql
-SELECT alunos COUNT(*) AS "Quantidade" FROM alunos GROUP BY nome HAVING Média > 7;
+
 ```
