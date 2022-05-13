@@ -49,15 +49,20 @@ FROM professores GROUP BY atuacao
 
 ## 8) consulta mostra nome alunos, titulo curso e professor de cada curso ○
 ```sql
-
+    SELECT alunos.nome, cursos.Titulo, professores.nome 
+    FROM alunos
+    INNER JOIN cursos
+    ON alunos.curso.id = cursos.id 
+    INNER JOIN professores
+    ON professores.curso_id = cursos.id;
 ```
 
-## 9) ○
+## 9) constulta mostra QTD alunos de cada curso, classificar resultados em order decrescente ○
 ```sql
-
+    SELECT cursos
 ```
 
-## 10) ○
+## 10) consulta mostra nome alunos, notas, medias e titulo do curso que fazem, somente alunos front e back end. mostrar classificados pelo nome do aluno ○
 ```sql
 
 ```
