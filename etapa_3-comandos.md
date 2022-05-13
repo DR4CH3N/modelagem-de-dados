@@ -47,7 +47,7 @@ FROM professores GROUP BY atuacao
     ORDER BY professores.nome
 ```
 
-## 8) consulta mostra nome alunos, titulo curso e professor de cada curso ○
+## 8) consulta mostra nome alunos, titulo curso e professor de cada curso •
 ```sql
     SELECT alunos.nome, cursos.Titulo, professores.nome 
     FROM alunos
@@ -55,9 +55,11 @@ FROM professores GROUP BY atuacao
     ON alunos.curso.id = cursos.id 
     INNER JOIN professores
     ON professores.curso_id = cursos.id;
+
+        SELECT alunos.nome AS "Alunos", cursos.titulo AS "Cursos", professores.nome AS "Professores" FROM alunos INNER JOIN cursos ON alunos.curso_id = cursos.id INNER JOIN professores ON cursos.professor_id = professores.id;
 ```
 
-## 9) constulta mostra QTD alunos de cada curso, classificar resultados em order decrescente ○
+## 9) constulta mostra QTD alunos de cada curso, classificar resultados em order decrescente •
 ```sql
     SELECT (cursos.Titulo) AS "cursos", COUNT(alunos.curso_id) AS "QTD de alunos por curso"
     FROM alunos 
@@ -67,11 +69,11 @@ FROM professores GROUP BY atuacao
     ORDER BY curso_id DESC
 ```
 
-## 10) consulta mostra nome alunos, notas, medias e titulo do curso que fazem, somente alunos front e back end. mostrar classificados pelo nome do aluno ○
+## 10) consulta mostra nome alunos, notas, medias e titulo do curso que fazem, somente alunos front e back end. mostrar classificados pelo nome do aluno •
 ```sql
 SELECT alunos.nome, alunos.Nota1, alunos.Nota2, cursos.Titulo, cursos.Titulo
 
-
+    SELECT alunos.nome, alunos.nota1, alunos.nota2, ROUND(AVG(alunos.nota1 + alunos.nota2)/2, 2) AS "Médias", cursos.titulo FROM alunos INNER JOIN cursos ON alunos.curso_id = cursos.id WHERE cursos.titulo = "Front-End" OR cursos.titulo = "Back-End" GROUP BY alunos.nome ORDER BY alunos.nome;
 ```
 
 ## 11) consulta altera nome do curso e CargaH •
@@ -92,17 +94,15 @@ WHERE id = 4;
     DELETE FROM alunos WHERE curso_id = 3 AND id = 8;
 ```
 
-## 13) consulta mostra lista alunos, titulo curso classificados por nome de aluno ○
+## 13) consulta mostra lista alunos, titulo curso classificados por nome de aluno •
 ```sql
-    SELECT Nome, Titulo FROM alunos OR cursos
-    GROUP BY Nome
-
-    SELECT alunos.Nome, cursos.Titulo AS aluno, curso
-    COUNT(alunos.curso_id),() AS "qtd de alunos no curso"
+      SELECT alunos.Nome AS "Aluno", cursos.Titulo AS "curso",
+    COUNT(alunos.curso_id) AS "qtd de alunos no curso"
     FROM alunos INNER JOIN cursos
     ON alunos.curso_id = cursos.id
     GROUP BY aluno
     ORDER BY alunos.Nome ASC
 
-     
+
+    SELECT alunos.nome, cursos.titulo FROM alunos INNER JOIN cursos ON alunos.curso_id = cursos.id ORDER BY alunos.nome;
 ```
