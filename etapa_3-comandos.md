@@ -106,3 +106,29 @@ WHERE id = 4;
 
     SELECT alunos.nome, cursos.titulo FROM alunos INNER JOIN cursos ON alunos.curso_id = cursos.id ORDER BY alunos.nome;
 ```
+
+
+
+## DESAFIOS
+
+
+## 1)
+```sql
+SELECT nome, ROUND(DATEDIFF(CURDATE(), data_nascimento)/365) AS "Idade" FROM alunos;
+```
+
+## 2)
+```sql
+SELECT nome, ROUND(AVG(nota1 + nota2)/2, 2) AS "Média" FROM alunos GROUP BY nome HAVING Média > 7;
+```
+
+
+## 3) 
+```sql
+SELECT nome, ROUND(AVG(nota1 + nota2)/2, 2) AS "Média" FROM alunos GROUP BY nome HAVING Média < 7;
+```
+
+## 4)
+```sql
+SELECT alunos COUNT(*) AS "Quantidade" FROM alunos GROUP BY nome HAVING Média > 7;
+```
