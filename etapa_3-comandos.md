@@ -59,11 +59,18 @@ FROM professores GROUP BY atuacao
 
 ## 9) constulta mostra QTD alunos de cada curso, classificar resultados em order decrescente ○
 ```sql
-    SELECT cursos
+    SELECT (cursos.Titulo) AS "cursos", COUNT(alunos.curso_id) AS "QTD de alunos por curso"
+    FROM alunos 
+    INNER JOIN cursos
+    ON alunos.curso_id = cursos.id
+    GROUP BY curso_id 
+    ORDER BY curso_id DESC
 ```
 
 ## 10) consulta mostra nome alunos, notas, medias e titulo do curso que fazem, somente alunos front e back end. mostrar classificados pelo nome do aluno ○
 ```sql
+SELECT alunos.nome, alunos.Nota1, alunos.Nota2, cursos.Titulo, cursos.Titulo
+
 
 ```
 
@@ -90,17 +97,12 @@ WHERE id = 4;
     SELECT Nome, Titulo FROM alunos OR cursos
     GROUP BY Nome
 
-    SELECT alunos.Nome AS aluno,
-    COUNT(alunos.curso_id) AS "qtd de alunos"
+    SELECT alunos.Nome, cursos.Titulo AS aluno, curso
+    COUNT(alunos.curso_id),() AS "qtd de alunos no curso"
     FROM alunos INNER JOIN cursos
     ON alunos.curso_id = cursos.id
     GROUP BY aluno
-    ORDER BY alunos.Nome
+    ORDER BY alunos.Nome ASC
 
-     SELECT alunos.Nome AS aluno,
-    COUNT(alunos.id_id) AS "qtd de alunos no curso"
-    FROM alunos RIGHT JOIN cursos
-    ON alunos.curso_id = cursos.id
-    GROUP BY aluno
-    ORDER BY alunos.nome
+     
 ```
